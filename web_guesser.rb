@@ -1,5 +1,6 @@
 require 'sinatra'
 
 get '/' do
-  "Hello, World!"
-end 
+  x = rand(100)
+  "The secret number is #{x}"
+end
