@@ -3,16 +3,16 @@ require 'sinatra/reloader'
 
 NUMBER = rand(100)
 
-  def check_guess(num_guess)
-    if num_guess.to_i > NUMBER && num_guess.to_i - NUMBER > 5
+  def check_guess(guess)
+    if guess.to_i > NUMBER && guess.to_i - NUMBER > 5
       "Way too high!"
-    elsif num_guess.to_i < NUMBER && NUMBER - num_guess.to_i > 5
+    elsif guess.to_i < NUMBER && NUMBER - guess.to_i > 5
       "Way too low!"
-    elsif num_guess.to_i < NUMBER
+    elsif guess.to_i < NUMBER
       "Too low!"
-    elsif num_guess.to_i > NUMBER
+    elsif guess.to_i > NUMBER
       "Too high!"
-    elsif num_guess.to_i == NUMBER
+    elsif guess.to_i == NUMBER
       "You got it right! The SECRET NUMBER is #{NUMBER}"
     end
   end
