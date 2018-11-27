@@ -35,5 +35,5 @@ NUMBER = rand(100)
     guess = params["guess"]
     message = check_guess(guess)
     color = color_feedback(message)
-    erb :index, :locals => {:number => NUMBER, :message => message, :color => color}
+    erb :index, :locals => {:number => NUMBER, :color => color, :message => message}
   end
