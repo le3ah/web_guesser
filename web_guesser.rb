@@ -17,8 +17,19 @@ NUMBER = rand(100)
     end
   end
 
+  def color_feedback(output)
+    if output == "Way too high!" || output == "Way too low!"
+      "#ef071e"
+    elsif output == "Too high!" || output == "Too low!"
+      "#efc2c6"
+    else
+      "#12912e"
+    end
+  end
+
   get '/' do
     guess = params["guess"]
     message = check_guess(guess)
-    erb :index, :locals => {:number => NUMBER, :message => message}
+    color = color_feedback(message)
+    erb :index, :locals => {:number => NUMBER, :message => message, :color => color}
   end
